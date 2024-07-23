@@ -9,7 +9,7 @@ import UIKit
 
 class PosterCell: UICollectionViewCell {
     static let id = "PosterCell"
-    
+    private let imageCache = ImageCache.shaerd
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -35,14 +35,21 @@ class PosterCell: UICollectionViewCell {
     
     func configure(with movie: Movie) {
         guard let posterPath = movie.posterPath else { return }
-        let urlString = "https://image.tmdb.org/t/p/w500/\(posterPath).jpg"
-        guard let url = URL(string: urlString) else { return }
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.sync {
-                        self?.imageView.image = image
+        print("posterPath: \(posterPath)")
+        if let image = imageCache[posterPath] {
+            print("cache hit")
+            self.imageView.image = image
+        } else {
+            print("cache miss")
+            let urlString = "https://image.tmdb.org/t/p/w500/\(posterPath).jpg"
+            guard let url = URL(string: urlString) else { return }
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.sync {
+                            self?.imageCache[posterPath] = image
+                            self?.imageView.image = image
+                        }
                     }
                 }
             }

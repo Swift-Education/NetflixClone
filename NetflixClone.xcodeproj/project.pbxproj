@@ -25,6 +25,8 @@
 		B5E89C672C4E5038003434AC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C662C4E5038003434AC /* MainViewModel.swift */; };
 		B5E89C6A2C4E506B003434AC /* NetworkMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C692C4E506B003434AC /* NetworkMananger.swift */; };
 		B5E89C6D2C4E508D003434AC /* YouTubePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C6C2C4E508D003434AC /* YouTubePlayerViewController.swift */; };
+		B5E89C732C4FFCC1003434AC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C722C4FFCC1003434AC /* ImageCache.swift */; };
+		B5E89C752C4FFE69003434AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C742C4FFE69003434AC /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		B5E89C662C4E5038003434AC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B5E89C692C4E506B003434AC /* NetworkMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMananger.swift; sourceTree = "<group>"; };
 		B5E89C6C2C4E508D003434AC /* YouTubePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerViewController.swift; sourceTree = "<group>"; };
+		B5E89C722C4FFCC1003434AC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		B5E89C742C4FFE69003434AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				B5E89C502C4E4F07003434AC /* PosterCell.swift */,
 				B5E89C522C4E4F37003434AC /* SectionHeaderView.swift */,
 				B5E89C6C2C4E508D003434AC /* YouTubePlayerViewController.swift */,
+				B5E89C742C4FFE69003434AC /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B5E89C692C4E506B003434AC /* NetworkMananger.swift */,
+				B5E89C722C4FFCC1003434AC /* ImageCache.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E89C732C4FFCC1003434AC /* ImageCache.swift in Sources */,
 				B5E89C3B2C4E4DA6003434AC /* MainViewController.swift in Sources */,
 				B5E89C372C4E4DA6003434AC /* AppDelegate.swift in Sources */,
 				B5E89C512C4E4F07003434AC /* PosterCell.swift in Sources */,
@@ -238,6 +245,7 @@
 				B5E89C4E2C4E4EAC003434AC /* Video.swift in Sources */,
 				B5E89C672C4E5038003434AC /* MainViewModel.swift in Sources */,
 				B5E89C6D2C4E508D003434AC /* YouTubePlayerViewController.swift in Sources */,
+				B5E89C752C4FFE69003434AC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
