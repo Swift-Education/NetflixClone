@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B51932C22C51EE90001B3D26 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51932C12C51EE90001B3D26 /* DiskCache.swift */; };
+		B51932E42C520B7A001B3D26 /* NBCWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51932E32C520B7A001B3D26 /* NBCWrapper.swift */; };
 		B5E89C372C4E4DA6003434AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C362C4E4DA6003434AC /* AppDelegate.swift */; };
 		B5E89C392C4E4DA6003434AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C382C4E4DA6003434AC /* SceneDelegate.swift */; };
 		B5E89C3B2C4E4DA6003434AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E89C3A2C4E4DA6003434AC /* MainViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		B51932C12C51EE90001B3D26 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		B51932E32C520B7A001B3D26 /* NBCWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBCWrapper.swift; sourceTree = "<group>"; };
 		B5E89C332C4E4DA6003434AC /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E89C362C4E4DA6003434AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E89C382C4E4DA6003434AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				B5E89C692C4E506B003434AC /* NetworkMananger.swift */,
 				B5E89C722C4FFCC1003434AC /* ImageCache.swift */,
 				B51932C12C51EE90001B3D26 /* DiskCache.swift */,
+				B51932E32C520B7A001B3D26 /* NBCWrapper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				B5E89C6A2C4E506B003434AC /* NetworkMananger.swift in Sources */,
 				B5E89C4C2C4E4EA0003434AC /* Movie.swift in Sources */,
 				B5E89C532C4E4F37003434AC /* SectionHeaderView.swift in Sources */,
+				B51932E42C520B7A001B3D26 /* NBCWrapper.swift in Sources */,
 				B51932C22C51EE90001B3D26 /* DiskCache.swift in Sources */,
 				B5E89C392C4E4DA6003434AC /* SceneDelegate.swift in Sources */,
 				B5E89C4E2C4E4EAC003434AC /* Video.swift in Sources */,
