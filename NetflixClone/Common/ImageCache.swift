@@ -7,29 +7,31 @@
 
 import UIKit.UIImage
 
-protocol Cache {
-    associatedtype Key: Hashable
-    associatedtype Value
-    subscript(key: Key) -> Value? { get set }
+protocol CacheProtocol {
+    func store(_ image: UIImage, forKey key: String)
+    func retrieve(forKey key: String) -> UIImage?
+    func remove(forKey key: String)
     func removeAll()
 }
 
-final class ImageCache: Cache {
+final class ImageCache: CacheProtocol {
     static let shaerd: ImageCache = ImageCache()
-    private let cache = NSCache<NSString, UIImage>()
-    subscript(key: String) -> UIImage? {
-        get {
-            return cache.object(forKey: key as NSString) }
-        set {
-            guard let value = newValue else {
-                cache.removeObject(forKey: key as NSString)
-                return
-            }
-            cache.setObject(value, forKey: key as NSString) }
+    private let memoryCache = NSCache<NSString, UIImage>()
+//    private let diskCache = DiskCache()
+    
+    func store(_ image: UIImage, forKey key: String) {
+        memoryCache.setObject(image, forKey: key as NSString)
     }
     
-//    private init() {}
+    func retrieve(forKey key: String) -> UIImage? {
+        return memoryCache.object(forKey: key as NSString)
+    }
+    
+    func remove(forKey key: String) {
+        memoryCache.removeObject(forKey: key as NSString)
+    }
+    
     func removeAll() {
-        cache.removeAllObjects()
+        memoryCache.removeAllObjects()
     }
 }
