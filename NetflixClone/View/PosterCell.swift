@@ -9,7 +9,9 @@ import UIKit
 
 class PosterCell: UICollectionViewCell {
     static let id = "PosterCell"
-    private let imageCache = ImageCache.shaerd
+    private let imageCache = ImageCache.shared
+    private let diskCache = DiskCache()
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

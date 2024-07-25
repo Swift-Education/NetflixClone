@@ -25,7 +25,7 @@ protocol CacheProtocol {
 }
 
 final class ImageCache: CacheProtocol {
-    static let shaerd: ImageCache = ImageCache()
+    static let shared: ImageCache = ImageCache()
     private let memoryCache = NSCache<NSString, UIImage>()
     private let diskCache = DiskCache()
     
