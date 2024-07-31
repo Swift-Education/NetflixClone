@@ -38,14 +38,17 @@ final class ImageCache: CacheProtocol {
         // 6. 다음 번 요청시에는 메모리 캐시에서 이미지를 불러옴
         if let imageFromMemory = memoryCache.object(forKey: key as NSString) {
             // 2. 메모리 캐시에서 해당 이미지를 검색
+            print("cache hit")
             return imageFromMemory
         } else if let imageFromDisk = diskCache.retrieve(forKey: key) {
             // 3. 없는 경우, 디스크 캐시에서 해당 이미지를 검색
             // 7. 프로세스(앱) 재시작 이후의 요청에는 디스크 캐시에서 불러온 후 메모리 캐시에 추가
             memoryCache.setObject(imageFromDisk, forKey: key as NSString)
+            print("cache hit")
             return imageFromDisk
         } else {
             // 4. 없는 경우, URLString으로 이미지를 네트워크 다운로드
+            print("cache miss")
             return nil
         }
     }

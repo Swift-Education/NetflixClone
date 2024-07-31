@@ -18,7 +18,29 @@ public struct NBCWrapper<Base> {
 
 extension NBCWrapper where Base: NBCImageView {
     func setImage(path: String) {
-        self.base.image = imageCache.retrieve(forKey: path)
+        // do something
+        cache(with: path) { self.base.image = $0 }
+    }
+    
+    private func cache(with path: String, completion: @escaping ((UIImage) -> Void)) {
+        // 4. 없는 경우, URLString으로 이미지를 네트워크 다운로드
+        if let image = imageCache.retrieve(forKey: path) {
+            completion(image)
+        } else {
+            let urlString = "https://image.tmdb.org/t/p/w500/\(path).jpg"
+            guard let url = URL(string: urlString) else { return }
+            DispatchQueue.global().async { [self] in
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.sync {
+                            // 5. 메모리 캐시와 디스크 캐시에 해당 이미지를 저장
+                            self.imageCache.store(image, forKey: path)
+                            completion(image)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 extension UIImageView: NBCCompatible {}

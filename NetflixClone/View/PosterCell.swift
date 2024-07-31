@@ -10,7 +10,6 @@ import UIKit
 class PosterCell: UICollectionViewCell {
     static let id = "PosterCell"
     private let imageCache = ImageCache.shared
-    private let diskCache = DiskCache()
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -38,9 +37,7 @@ class PosterCell: UICollectionViewCell {
     func configure(with movie: Movie) {
         guard let posterPath = movie.posterPath else { return }
         print("posterPath: \(posterPath)")
-//        cacheByDisk(with: posterPath)
-//        cache(with: posterPath)
-        self.imageView.nbc.setImage(path: posterPath)
+        cache(with: posterPath)
     }
     
     func cache(with path: String) {
